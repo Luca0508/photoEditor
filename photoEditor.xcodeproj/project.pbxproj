@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A500F594278BE12200C48F13 /* PhotoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500F593278BE12200C48F13 /* PhotoEditorViewController.swift */; };
 		A5A295CD278583AC009347AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A295CC278583AC009347AD /* AppDelegate.swift */; };
 		A5A295CF278583AC009347AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A295CE278583AC009347AD /* SceneDelegate.swift */; };
 		A5A295D1278583AC009347AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A295D0278583AC009347AD /* ViewController.swift */; };
 		A5A295D4278583AC009347AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A295D2278583AC009347AD /* Main.storyboard */; };
 		A5A295D6278583AE009347AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5A295D5278583AE009347AD /* Assets.xcassets */; };
 		A5A295D9278583AE009347AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5A295D7278583AE009347AD /* LaunchScreen.storyboard */; };
+		A5A295E127858506009347AD /* photoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A295E027858506009347AD /* photoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A500F593278BE12200C48F13 /* PhotoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewController.swift; sourceTree = "<group>"; };
 		A5A295C9278583AB009347AD /* photoEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A295CC278583AC009347AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5A295CE278583AC009347AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		A5A295D5278583AE009347AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5A295D8278583AE009347AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5A295DA278583AE009347AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5A295E027858506009347AD /* photoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				A5A295CE278583AC009347AD /* SceneDelegate.swift */,
 				A5A295D0278583AC009347AD /* ViewController.swift */,
 				A5A295D2278583AC009347AD /* Main.storyboard */,
+				A500F593278BE12200C48F13 /* PhotoEditorViewController.swift */,
+				A5A295E027858506009347AD /* photoViewController.swift */,
 				A5A295D5278583AE009347AD /* Assets.xcassets */,
 				A5A295D7278583AE009347AD /* LaunchScreen.storyboard */,
 				A5A295DA278583AE009347AD /* Info.plist */,
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A295D1278583AC009347AD /* ViewController.swift in Sources */,
+				A5A295E127858506009347AD /* photoViewController.swift in Sources */,
 				A5A295CD278583AC009347AD /* AppDelegate.swift in Sources */,
 				A5A295CF278583AC009347AD /* SceneDelegate.swift in Sources */,
+				A500F594278BE12200C48F13 /* PhotoEditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
