@@ -16,35 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Osx-JX-6Rk">
-                                <rect key="frame" x="0.0" y="145" width="414" height="446"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Osx-JX-6Rk">
+                                <rect key="frame" x="0.0" y="128" width="414" height="534"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2h-Nn-3sF">
-                                <rect key="frame" x="40" y="746" width="125" height="44"/>
+                                <rect key="frame" x="170" y="744" width="75" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="選取照片">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="35"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="pressChoosePhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vcH-yF-eAs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bw2-L6-LDR">
-                                <rect key="frame" x="259" y="746" width="125" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="編輯照片">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="23"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="pressEditPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pEX-Yi-Nge"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Osx-JX-6Rk" secondAttribute="bottom" constant="200" id="0cS-GA-IWK"/>
+                            <constraint firstItem="Osx-JX-6Rk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6AC-NF-lRZ"/>
+                            <constraint firstItem="Osx-JX-6Rk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VN5-Sp-cz6"/>
+                            <constraint firstItem="Osx-JX-6Rk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="YwP-o8-jBZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pP8-fy-vQG"/>
                     <connections>
@@ -64,22 +59,143 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6b-F2-Sa8">
-                                <rect key="frame" x="0.0" y="118" width="414" height="431"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMj-qE-Jhu" userLabel="photoView">
+                                <rect key="frame" x="0.0" y="128" width="414" height="534"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONR-F4-hJk" userLabel="rotateView">
+                                        <rect key="frame" x="0.0" y="8" width="414" height="526"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pa2-Mn-cNw" userLabel="mirrorView">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="526"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WR9-EK-RYm" userLabel="resizeView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="526"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzA-Jz-2wA">
+                                                                <rect key="frame" x="0.0" y="-4" width="414" height="534"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6b-F2-Sa8">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="534"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="Q6b-F2-Sa8" firstAttribute="bottom" secondItem="HsA-yB-ykK" secondAttribute="bottom" id="BJo-eJ-hhp"/>
+                                                                    <constraint firstItem="Q6b-F2-Sa8" firstAttribute="top" secondItem="HsA-yB-ykK" secondAttribute="top" id="ZF9-OT-eaI"/>
+                                                                    <constraint firstItem="Q6b-F2-Sa8" firstAttribute="trailing" secondItem="HsA-yB-ykK" secondAttribute="trailing" id="eTJ-Kl-Bkz"/>
+                                                                    <constraint firstItem="Q6b-F2-Sa8" firstAttribute="leading" secondItem="HsA-yB-ykK" secondAttribute="leading" id="sX6-98-lUE"/>
+                                                                </constraints>
+                                                                <viewLayoutGuide key="contentLayoutGuide" id="HsA-yB-ykK"/>
+                                                                <viewLayoutGuide key="frameLayoutGuide" id="WNz-dY-8BM"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="8Z0-5y-wFu" id="CdZ-37-wQM"/>
+                                                                </connections>
+                                                            </scrollView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="labelColor"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Iyg-RW-fqn">
+                                <rect key="frame" x="71" y="766.5" width="272" height="45.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GYe-oa-if7">
+                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="45.5"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="rotate.right.fill" catalog="system" title="">
+                                            <backgroundConfiguration key="background"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="26"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressEditButtons:" destination="8Z0-5y-wFu" eventType="touchUpInside" id="T4Q-UZ-q8h"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpz-s5-Bq5">
+                                        <rect key="frame" x="66.5" y="0.0" width="68" height="45.5"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="flip.horizontal.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="26"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressEditButtons:" destination="8Z0-5y-wFu" eventType="touchUpInside" id="Tvb-5D-lAb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j77-XP-hKe">
+                                        <rect key="frame" x="144.5" y="0.0" width="60" height="45.5"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="square.split.bottomrightquarter.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="26"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressEditButtons:" destination="8Z0-5y-wFu" eventType="touchUpInside" id="0d9-hV-ahi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uu-Sx-srp">
+                                        <rect key="frame" x="214.5" y="0.0" width="57.5" height="45.5"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="doc.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="26"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressEditButtons:" destination="8Z0-5y-wFu" eventType="touchUpInside" id="7Us-24-Tc1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-hw-0j2">
+                                <rect key="frame" x="43.5" y="705.5" width="327" height="32"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Original"/>
+                                    <segment title="Rectangle"/>
+                                    <segment title="4:3"/>
+                                    <segment title="16:9"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="pressResizeOption:" destination="8Z0-5y-wFu" eventType="valueChanged" id="EZZ-yc-tQO"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="idb-gE-N9H"/>
-                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="Q6b-F2-Sa8" firstAttribute="leading" secondItem="idb-gE-N9H" secondAttribute="leading" id="5Bj-iu-buj"/>
-                            <constraint firstItem="idb-gE-N9H" firstAttribute="trailing" secondItem="Q6b-F2-Sa8" secondAttribute="trailing" id="Bdf-Hw-g7e"/>
-                            <constraint firstItem="idb-gE-N9H" firstAttribute="bottom" secondItem="Q6b-F2-Sa8" secondAttribute="bottom" constant="313" id="JE3-Wt-XCl"/>
-                            <constraint firstItem="Q6b-F2-Sa8" firstAttribute="top" secondItem="idb-gE-N9H" secondAttribute="top" constant="30" id="kIw-kL-FXk"/>
+                            <constraint firstItem="pMj-qE-Jhu" firstAttribute="leading" secondItem="idb-gE-N9H" secondAttribute="leading" id="9sp-ah-dnW"/>
+                            <constraint firstItem="u2U-hw-0j2" firstAttribute="centerX" secondItem="F4H-FC-Mb8" secondAttribute="centerX" id="BGO-YU-7s6"/>
+                            <constraint firstItem="idb-gE-N9H" firstAttribute="trailing" secondItem="pMj-qE-Jhu" secondAttribute="trailing" id="Q5j-US-znZ"/>
+                            <constraint firstItem="idb-gE-N9H" firstAttribute="bottom" secondItem="Iyg-RW-fqn" secondAttribute="bottom" constant="50" id="RhW-Bh-QR9"/>
+                            <constraint firstItem="pMj-qE-Jhu" firstAttribute="top" secondItem="idb-gE-N9H" secondAttribute="top" constant="40" id="Vby-xi-hAb"/>
+                            <constraint firstItem="Iyg-RW-fqn" firstAttribute="top" secondItem="u2U-hw-0j2" secondAttribute="bottom" constant="30" id="chv-bk-CNO"/>
+                            <constraint firstItem="Iyg-RW-fqn" firstAttribute="centerX" secondItem="F4H-FC-Mb8" secondAttribute="centerX" id="lBF-gD-wGl"/>
+                            <constraint firstItem="idb-gE-N9H" firstAttribute="bottom" secondItem="pMj-qE-Jhu" secondAttribute="bottom" constant="200" id="pXg-NK-7h8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mvd-3z-GIq"/>
                     <connections>
+                        <outlet property="mirrorView" destination="pa2-Mn-cNw" id="4vU-Rn-pkD"/>
                         <outlet property="photoImageView" destination="Q6b-F2-Sa8" id="nwh-Z3-QIs"/>
+                        <outlet property="photoScrollView" destination="qzA-Jz-2wA" id="sIC-Nk-gPu"/>
+                        <outlet property="photoView" destination="pMj-qE-Jhu" id="xPz-sd-tXx"/>
+                        <outlet property="resizeView" destination="WR9-EK-RYm" id="kku-JX-U6L"/>
+                        <outlet property="rotateView" destination="ONR-F4-hJk" id="qV3-Or-1fU"/>
+                        <outlet property="sizeSegmentedControl" destination="u2U-hw-0j2" id="CjT-e2-h2p"/>
+                        <outletCollection property="editButtons" destination="GYe-oa-if7" collectionClass="NSMutableArray" id="mBh-pJ-0Y8"/>
+                        <outletCollection property="editButtons" destination="tpz-s5-Bq5" collectionClass="NSMutableArray" id="dpL-3O-Pas"/>
+                        <outletCollection property="editButtons" destination="j77-XP-hKe" collectionClass="NSMutableArray" id="15Z-zQ-PfO"/>
+                        <outletCollection property="editButtons" destination="2Uu-Sx-srp" collectionClass="NSMutableArray" id="Ipt-xq-elc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bg-tT-TK0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,6 +222,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="doc.fill" catalog="system" width="115" height="128"/>
+        <image name="flip.horizontal.fill" catalog="system" width="128" height="112"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="rotate.right.fill" catalog="system" width="118" height="128"/>
+        <image name="square.split.bottomrightquarter.fill" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

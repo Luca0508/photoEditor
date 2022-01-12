@@ -24,34 +24,41 @@ class photoViewController: UIViewController, UIImagePickerControllerDelegate & U
         return controller
     }
     
+    struct source{
+        var title :String
+        var sourceType :UIImagePickerController.SourceType
+    }
+    
     @IBAction func pressChoosePhotoButton(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Select Photo", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        let sources = [
+            source(title: "Album", sourceType: .photoLibrary),
+            source(title: "Camera", sourceType: .camera)
+        ]
+        for s in sources{
+            let action = UIAlertAction(title: s.title, style: .default){_ in
+                self.selectPhoto(sourceType: s.sourceType)
+            }
+            alertController.addAction(action)
+        }
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func selectPhoto(sourceType :UIImagePickerController.SourceType){
         let controller = UIImagePickerController()
         controller.delegate = self
-        controller.sourceType = .photoLibrary
+        controller.sourceType = sourceType
         present(controller, animated: true, completion: nil)
-        
-      
-        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         photoImageView.image = info[.originalImage] as? UIImage
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imageEmptyAlert(){
-        let controller = UIAlertController(title: "Warning !!!", message: "您還沒選照片呢！！", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "知道啦～～", style: .default, handler: nil)
-        controller.addAction(okAction)
-        present(controller, animated: true, completion: nil)
-    }
-    
-    @IBAction func pressEditPhotoButton(_ sender: Any) {
+        
         if photoImageView.image != nil {
             performSegue(withIdentifier: "showPhotoEditor", sender: nil)
-        }else {
-            imageEmptyAlert()
         }
+        dismiss(animated: true, completion: nil)
     }
     
     
