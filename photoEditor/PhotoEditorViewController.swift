@@ -25,7 +25,7 @@ class PhotoEditorViewController: UIViewController {
     
     var rotateTimes = 0
     var mirrorVariable = 1
-    var zoomVariable = 1.0
+    
     
     
    
@@ -36,11 +36,9 @@ class PhotoEditorViewController: UIViewController {
         sizeSegmentedControl.isHidden = true
         photoImageView.image = chosenPhoto
         
-        
         photoScrollView.contentSize = photoImageView.frame.size
         photoScrollView.delegate = self
         updateScrollView()
-        
     }
     
     func updateScrollView(){
@@ -49,8 +47,7 @@ class PhotoEditorViewController: UIViewController {
         let heightScale = photoView.bounds.height / photoImageView.image!.size.height
         let scale = min(widthScale, heightScale)
         photoScrollView.minimumZoomScale = scale
-        photoScrollView.zoomScale = scale
-        
+        photoScrollView.zoomScale = scale 
     }
     
     
@@ -59,7 +56,6 @@ class PhotoEditorViewController: UIViewController {
         sizeSegmentedControl.isHidden = true
         
         switch sender.tag{
-        
         // rotate
         case 0:
             rotateTimes += 1
@@ -81,41 +77,38 @@ class PhotoEditorViewController: UIViewController {
             let image = renderer.image(actions: {(context) in
                 photoView.drawHierarchy(in: photoView.bounds, afterScreenUpdates: true)
             })
-            
             let actViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
             present(actViewController, animated: true, completion: nil)
             
         default:
             break
         }
-        
     }
     
 
     @IBAction func pressResizeOption(_ sender: Any) {
-        
         let origWidth = resizeView.bounds.width
         let origHeight = resizeView.bounds.height
         var newWidth :CGFloat = 0.0
         var newHeight : CGFloat = 0.0
         
-        
         switch sizeSegmentedControl.selectedSegmentIndex{
+        // original
         case 0 :
             newWidth = origWidth
             newHeight = origHeight
-            print("original")
+        
+        // Rectangle
         case 1 :
             newWidth = origWidth/2.0
             newHeight = origHeight
             
-            print("origwidth: \(origWidth)  origheight: \(origHeight)")
-            
+        // 4:3
         case 2 :
             newWidth = origWidth
             newHeight = origWidth / 4.0 * 3.0
-            print("width: \(newWidth)  height: \(newHeight)")
-            
+
+        // 16:9
         case 3:
             newWidth = origWidth
             newHeight = origWidth / 16.0 * 9.0
@@ -123,10 +116,8 @@ class PhotoEditorViewController: UIViewController {
         default:
             break
         }
-        
         photoScrollView.frame.size = CGSize(width: newWidth, height: newHeight)
         photoScrollView.center = CGPoint(x: origWidth/2, y: origHeight/2)
-        
     }
     
 

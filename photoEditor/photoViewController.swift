@@ -54,7 +54,7 @@ class photoViewController: UIViewController, UIImagePickerControllerDelegate & U
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         photoImageView.image = info[.originalImage] as? UIImage
-        
+
         if photoImageView.image != nil {
             performSegue(withIdentifier: "showPhotoEditor", sender: nil)
         }
